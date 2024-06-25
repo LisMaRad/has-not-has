@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>has-not-has</title>
+</head>
+<style>
+
+  ul li:has(p) p{
+    background-color: red;
+
+  }
+
+  ul li:has(:not(p)){
+    border: 1px solid black;
+
+  }
+
+  ul li:not(:has(div)){
+    font-weight: bold;
+
+  }
+
+  li:not(:first-of-type){
+      background-color: pink !important;
+    }
+
+</style>
+<body>
+    <ul>
+      <li>
+          <p>:not(:has()) matches if none of the child element has a div element.</p>
+      </li>
+      <li>
+          <a href="https://www.google.at">:has(:not()) matches if one of the child element doesn't have a p element.
+          </a>
+      </li>
+      <li>
+          <div>Source: <a href="https://www.reddit.com/r/uBlockOrigin/comments/14jp3h5/clarification_on_nothas_vs_hasnot/?rdt=64070">Reddit</a></div>
+      </li>
+    </ul>
+</body>
+</html>
