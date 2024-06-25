@@ -40,5 +40,9 @@
           <div>Source: <a href="https://www.reddit.com/r/uBlockOrigin/comments/14jp3h5/clarification_on_nothas_vs_hasnot/?rdt=64070">Reddit</a></div>
       </li>
     </ul>
-</body>
+    <p>Based on the website <a href="https://caniuse.com/css-has">Can-i-use</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:not">Mozilla Developer</a> the :has() and :not() selectors are supported in the main browsers, especially the desktop browser versions. Therefore, using the selectors is very convenient to check for classes or child elements and style certain child elements.</p>
+    <p>Based on the website <a href="https://www.bram.us/2023/01/04/css-has-feature-detection-with-supportsselector-you-want-has-not-has/">Bram</a> the support can be checked by using <b>@supports selector(:has(*))</b></p>  
+    <h2>Fallback:</h2>
+    <p>As a fallback, it is possible to check the classes and child elements with Javascript. Therefore a function has to query the element and add the styling afterwards.</p>
+  </body>
 </html>
