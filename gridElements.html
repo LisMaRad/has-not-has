@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid elements</title>
+</head>
+<style>
+
+    .box {
+        container-type: inline-size;
+        container-name: raster;
+    }
+    .gridcontainer {
+        display: grid;
+        height: 100vh;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas:
+            "a a a d"
+            "b f g g"
+            "b f c c"
+            "b e c c";
+    }
+
+    .yellow {
+        grid-area: a;
+        background-color: yellow;
+    }
+
+    .orange {
+        grid-area: b;
+        background-color: orange;
+    }
+
+    .red {
+        grid-area: c;
+        background-color: red;
+    }
+
+    .pink {
+        grid-area: d;
+        background-color: pink;
+    }
+
+    .purple {
+        grid-area: e;
+        background-color: purple;
+    }
+
+    .blue {
+        grid-area: f;
+        background-color: blue;
+    }
+
+    .green {
+        grid-area: g;
+        background-color: green;
+    }
+
+    @container raster (min-width: 700px) {
+        .gridcontainer {
+            grid-template-areas:
+                "a a d d"
+                "a a g g"
+                "f f c c"
+                "b e c c";
+            height: 500px;
+            margin: 10px 10%;
+
+        }
+        .blue, .green, .red, .pink, .purple {
+            opacity: 0.7;
+        }
+    
+    }
+</style>
+<body>
+    <div class="box">
+    <div class="gridcontainer">
+        <div class="yellow">a</div>
+        <div class="orange">b</div>
+        <div class="red">c</div>
+        <div class="pink">d</div>
+        <div class="purple">e</div>
+        <div class="blue">f</div>
+        <div class="green">g</div>
+    </div>
+</div>
+</body>
+</html>
