@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block elements</title>
+    <style>
+        /* Apply a block formatting context to .example01 and .example02, to prevent overflowing boxes and margin collapsing */
+        .example01 {
+            background: pink;
+            padding: 1rem;
+            max-width: 26rem;
+            overflow: hidden; /* Establishes block formatting context */
+        }
+
+        .small-box {
+            background: white;
+            border: 2px solid violet;
+            margin-right: 1rem;
+            float: left;
+            border-radius: 1rem;
+            padding: 1rem;
+            padding: 4rem 3rem;
+        }
+
+        .example02 {
+            background: pink;
+            max-width: 26rem;
+            overflow: hidden; /* Establishes block formatting context */
+        }
+
+        .margin-box {
+            margin: 1rem;
+            background: white;
+            border: 2px solid violet;
+        }
+
+        /* Layout and decoration, no need to change */
+        body {
+            margin: 3rem;
+            font-family: sans-serif;
+        }
+
+        body > div {
+            margin-bottom: 4rem;
+            clear: both;
+        }
+
+        h2 {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Containing Floats</h2>
+        <div class="example01">
+            <div class="small-box">some text</div>
+            Lorem ipsum dolor sit, amet in tempora. Illum, corporis suscipit? Saepe assumenda voluptas eius, numquam, nam tempora suscipit facere? Nam, obcaecati.
+        </div>
+    </div>
+    
+    <div>
+        <h2>Preventing Margin Collapsing</h2>
+        <div class="example02">
+            <div class="margin-box">Lorem ipsum dolor sit, amet consectetum in tempora. Illum perspiciatis</div>
+            <div class="margin-box">Lorem ipsum dolor sit, amet consectetum in tempora. Illum perspiciatis</div>
+            <div class="margin-box">Lorem ipsum dolor sit, amet consectetum in tempora. Illum perspiciatis</div>
+            <div class="margin-box">Lorem ipsum dolor sit, amet consectetum in tempora. Illum perspiciatis</div>
+        </div>
+    </div>
+</body>
+</html>

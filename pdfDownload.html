@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF download</title>
+</head>
+<style>
+    [href$=".pdf"]{
+        display: inline-flex;
+        gap: 0.5rem;
+        align-items: center;
+        background-color: rgb(12, 237, 237);
+        padding: 10px;
+        border-radius: 20px;
+        text-decoration: none;
+        color: black;
+    }
+    a[href$=".pdf"]::after{
+            content: "↓ (PDF)";
+            font-size: 14px;
+            padding: 5px;
+            background-color: rgb(26, 120, 120);
+            border-radius: inherit;
+        }
+
+    a[href$=".pdf"].withName::after{
+            content: "↓ " attr(href);
+            font-size: 14px;
+            padding: 7px;
+            background-color: rgb(26, 120, 120);
+            border-radius: inherit;
+        }
+
+</style>
+<body>
+    <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" download="dummy.pdf" class="withName">Download PDF</a>
+    <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" download="dummy.pdf">Download PDF</a>
+</body>
+</html>
