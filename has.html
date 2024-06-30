@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>has()</title>
+    <style>
+        figure:has(figcaption) {
+            display: inline-flex;
+            gap: 1rem;
+            flex-direction: column;
+            border: 2px solid var(--color-grey);
+            border-radius: 5px;
+            padding: .5rem .5rem 1rem .5rem;
+            text-align: center;
+        }
+        
+        figure > * {
+            display: block;
+        }
+
+        figure img {
+            border-radius: 4px;
+        }
+
+        figure figcaption {
+            font-size: .875rem;
+            font-style: italic;
+            font-family: serif;
+        }
+
+        :root {
+            --color-background: white;
+            --color-text: black;
+            --color-grey: #bbb;
+            --color-error: orangered;
+            --color-highlight: lightpink;
+        }
+
+        body {
+            font-family: sans-serif;
+            margin: 3rem;
+            background-color: var(--color-background);
+            color: var(--color-text);
+        } 
+
+        body.dark-mode {
+            --color-background: black;
+            --color-text: white;
+            --color-grey: #777;
+        }
+
+        div:has(input) {
+            border: 3px solid var(--color-grey);
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        div:has(input:focus) {
+            border: 3px solid var(--color-grey);
+        }
+
+        div:has(input:invalid) {
+            border: 3px solid var(--color-error);
+        }
+
+        div {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+
+        hr {
+            margin-block: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Figures</h1>
+    <figure>
+        <img src="https://placebear.com/200/100" alt="Text Pic">
+        <figcaption>Fig 1: Bear fishing</figcaption>
+    </figure>
+
+    <figure>
+        <img src="https://placebear.com/200/100" alt="Test Pic">
+    </figure>
+
+    <hr>
+
+    <h1>Theming</h1>
+    <label>
+        <input type="checkbox" id="toggle-darkmode">
+        Make this page dark mode
+    </label>
+
+    <hr>
+
+    <h1>Forms</h1>
+    <div>
+        <label>Enter your name</label>
+        <input type="text">
+    </div>
+
+    <div>
+        <label>Add a number</label>
+        <input type="number" min="0" max="10">
+    </div>
+
+    <script>
+        document.getElementById('toggle-darkmode').addEventListener('change', function() {
+            document.body.classList.toggle('dark-mode', this.checked);
+        });
+    </script>
+</body>
+</html>
