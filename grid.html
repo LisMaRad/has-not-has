@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <style>
+        .grid {
+            /* Make this container a grid container */
+            display: grid;
+            
+            /* Give it a minimum height of 95 percent of the viewport */
+            min-height: 95vh;
+            
+            /* Define a gutter of 1rem */
+            gap: 1rem;
+            
+            /* Arrange the items in 3 equally wide columns */
+            grid-template-columns: 1fr 1fr 1fr;
+            
+            /* Make all items shrink to their size, and center vertically and horizontally in their grid tracks */
+            justify-items: center;
+            align-items: center;
+
+            /* Now change this again, and make all items line up the top left of their grid tracks */
+            justify-items: start;
+            align-items: start;
+
+            margin: 4rem;
+        }
+
+        /* Decoration only, no need to change */
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: "Open Sans", sans-serif;
+            font-size: 0.875rem;
+            background-color: blue;
+            color: white;
+        }
+
+        .grid {
+            border: 1px dotted pink;
+        }
+
+        .grid > div {
+            background-color: rgba(0,0,0,0.2);
+            border: 1px dotted pink;
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div>Lorem ipsum.</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+        <div>Lorem elit.</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+        <div>Lorem.</div>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+        <div>Lorem.</div>
+    </div>
+</body>
+</html>
