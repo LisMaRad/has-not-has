@@ -6,24 +6,28 @@
     <title>Pseudo Classes and Elements</title>
 </head>
 <style>
-
     form::first-letter{
         font-size: 2em;
         color: red;
     }
     label {
-  display: block;
-  margin-top: 1em;
-}
+        display: block;
+        margin-top: 1em;
+    }
 
-input:out-of-range {
-  background-color: orangered;
-}
+    input:out-of-range {
+        background-color: orangered;
+    }
 
-:scope {
-  background-color: orange;
-}
+    @media print {
+        :scope {
+            background-color: greenyellow;
+        }
+    }
 
+    :scope {
+        background-color: orange;
+    }
 </style>
 <body>
     <form>
