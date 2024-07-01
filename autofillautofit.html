@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-fill vs auto-fit</title>
+</head>
+<style>
+.container {
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.container--autofill {
+   grid-template-columns: repeat(auto-fill, minmax(180px,1fr));
+}
+
+.container--autofit {
+   grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+}
+
+
+ /* decoration only  */
+body {
+  margin: 2rem;
+  font-family: sans-serif;
+  background-color: beige;
+}
+
+.container {
+  border: 3px solid black;
+}
+
+.container > * {
+  border: 2px solid red;
+  background-color: white;
+  padding: 2rem .5rem;
+}
+</style>
+<body>
+    <h2>Auto-fill & minmax()</h2>
+<div class="container container--autofill">
+  <div class="box">lorem ipsum</div>
+  <div class="box">lorem ipsum</div>
+  <div class="box">lorem ipsum</div>
+</div>
+
+<h2>Auto-fit & minmax()</h2>
+<div class="container container--autofit">
+  <div class="box">lorem ipsum</div>
+  <div class="box">lorem ipsum</div>
+  <div class="box">lorem ipsum</div>
+</div>
+<div>Auto-fill nimmt die angegebene größe an, Auto-fit verteilt sich auf die ganze breite</div>
+</body>
+</html>
